@@ -1,11 +1,16 @@
-import { View, StyleSheet, Text, Button, TextInput } from 'react-native';
+import {
+    Button,
+    StyleSheet,
+    Text,
+    TextInput,
+    View
+} from 'react-native';
 
 import Toast from 'react-native-toast-message';
 
 import { useState } from 'react';
 
 export default function Login(){
-
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
@@ -20,18 +25,16 @@ export default function Login(){
     return(
         <View style={ style.container }>
             <Toast />
-            <Text>
+            <Text style={ style.titulo }>
                 Login no Sistema
             </Text>
-
-            <TextInput
-                placeholder='Email'
+            <TextInput style={ style.input }
+                placeholder="E-mail"
                 value={ email }
                 onChangeText={ setEmail }
             />
-
-            <TextInput
-                placeholder='Senha'
+            <TextInput style={ style.input }
+                placeholder="Senha"
                 value={ senha }
                 onChangeText={ setSenha }
             />
@@ -47,24 +50,25 @@ export default function Login(){
 
 const style = StyleSheet.create({
     container:{
-        backgroundColor: "#fff",
         flex: 1,
+        backgroundColor: "#fff",
         justifyContent: 'center',
         padding: 10,
     },
-    
     titulo: {
         fontSize: 25,
         fontWeight: 'bold',
         textAlign: 'center',
-        color: '#eee8eff',
+        color: '#eee8e8ff',
         marginBottom: 15,
     },
-    input: {
-        borderColor: "gray",
+    
+    input:{
+        borderColor: "#000",
         borderStyle: 'solid',
         borderRadius: 10,
-        padding: 10,
-        marginBottom: 10,
+        borderWidth:1,
+        padding:10,
+        marginBottom:10,
     }
 });
